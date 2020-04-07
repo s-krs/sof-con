@@ -1,0 +1,79 @@
+// Write a code that provides an example of inheritance and push it to GitHub.
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+// Base (Parent) Class
+class Bird
+{
+    String name;
+    String habitat;
+    boolean fly;
+    boolean nocturnal;
+    
+    public Bird (String name, String habitat, boolean fly, boolean nocturnal) {
+        this.name = name;
+        this.habitat = habitat;
+        this.fly = fly;
+        this.nocturnal = nocturnal;
+    }
+    
+    public void Print() {
+        System.out.println("Name: " + name);
+        System.out.println("Habitat: " + habitat);
+        if (fly) {
+            System.out.println("Does it fly?: Yes");
+        } else {
+            System.out.println("Does it fly?: No");
+        }
+        if (nocturnal) {
+            System.out.println("Is it nocturnal?: Yes");
+        } else {
+            System.out.println("Is it nocturnal?: No");
+        }
+        System.out.println();
+    }
+}
+
+// Child Class
+class Extinct extends Bird
+{ 
+    int yearExtinct;
+    
+    public Extinct(String name, String habitat, boolean fly, boolean nocturnal, int yearExtinct){
+        super(name, habitat, fly, nocturnal);
+        this.yearExtinct = yearExtinct;
+    }
+    
+    public void Print() {
+        System.out.println("***Extinct***");
+        System.out.println("Name: " + name);
+        System.out.println("Habitat: " + habitat);
+        if (fly) {
+            System.out.println("Does it fly?: Yes");
+        } else {
+            System.out.println("Does it fly?: No");
+        }
+        if (nocturnal) {
+            System.out.println("Is it nocturnal?: Yes");
+        } else {
+            System.out.println("Is it nocturnal?: No");
+        }
+        System.out.println("Year Extinct: " + yearExtinct);
+        System.out.println();
+    }
+}
+
+
+public class Main 
+{ 
+    public static void main(String[] args) 
+    { 
+        Bird b = new Bird("Kakapo", "New Zealand", false, true);
+        b.Print();
+        
+        Extinct e = new Extinct("Dodo", "Mauricious", false, false, 1681);
+        e.Print();
+    } 
+}
